@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Window x:Class="NASK.OSE.CertChecker.UI.MainWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:local="clr-namespace:NASK.OSE.CertChecker.UI" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Title="Bezpieczny Internet OSE" Height="500" Width="800">
+  <Grid Background="{DynamicResource Dark}">
+    <Image HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="260" Height="165" Source="Resources/ribbon.png" />
+    <Image HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="200" Source="Resources/logo_ose.png" Margin="50,0,0,50" />
+    <Button local:CornerRadiusSetter.CornerRadius="30" Style="{DynamicResource BNormal}" Margin="0,0,0,150" HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="280" Height="60" Template="{DynamicResource MainButton}" Visibility="{Binding Path=Model.IsSafe, Converter={StaticResource BoolToNegativeVis}}" Command="{Binding Path=InstallCommand}">
+      <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Vertical">
+        <Label Style="{DynamicResource Normal}" HorizontalAlignment="Center" Content="WŁĄCZ" Padding="0" />
+        <Label Style="{DynamicResource Normal}" HorizontalAlignment="Center" Content="usługę na tym urządzeniu" FontSize="{DynamicResource SmallFontSize}" Padding="0" />
+      </StackPanel>
+    </Button>
+    <Button local:CornerRadiusSetter.CornerRadius="30" Style="{DynamicResource BBad}" Margin="0,0,0,150" HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="280" Height="60" Template="{DynamicResource BadButton}" Visibility="{Binding Path=Model.IsSafe, Converter={StaticResource BoolToVis}}" Command="{Binding Path=UninstallCommand}">
+      <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Vertical">
+        <Label Style="{DynamicResource Normal}" HorizontalAlignment="Center" Content="ODINSTALUJ" Padding="0" />
+      </StackPanel>
+    </Button>
+    <StackPanel HorizontalAlignment="Center" Height="100" Margin="0,50,0,0" VerticalAlignment="Top" Orientation="Horizontal" Visibility="{Binding Path=Model.IsSafe, Converter={StaticResource BoolToVis}}">
+      <Image HorizontalAlignment="Left" VerticalAlignment="Top" Source="Resources/GreenShield100.png" />
+      <StackPanel HorizontalAlignment="Left" VerticalAlignment="Center" Orientation="Horizontal" Margin="10 0 0 0">
+        <Label Style="{DynamicResource Normal}" VerticalAlignment="Center" Content="Twój internet OSE jest" />
+        <Label Style="{DynamicResource SafeAccent}" VerticalAlignment="Center" Content="bezpieczny" />
+      </StackPanel>
+    </StackPanel>
+    <StackPanel HorizontalAlignment="Center" Height="100" Margin="0,50,0,0" VerticalAlignment="Top" Orientation="Horizontal" Visibility="{Binding Path=Model.IsSafe, Converter={StaticResource BoolToNegativeVis}}">
+      <Image HorizontalAlignment="Left" VerticalAlignment="Top" Source="Resources/RedShield100.png" />
+      <StackPanel HorizontalAlignment="Left" VerticalAlignment="Center" Orientation="Vertical" Margin="10 0 0 0">
+        <StackPanel HorizontalAlignment="Left" VerticalAlignment="Center" Orientation="Horizontal">
+          <Label Style="{DynamicResource Normal}" VerticalAlignment="Center" Content="Twój internet OSE jeszcze " Padding="0" />
+          <Label Style="{DynamicResource UnsafeAccent}" VerticalAlignment="Center" Content="nie jest bezpieczny" Padding="0" />
+        </StackPanel>
+        <Label Style="{DynamicResource Normal}" VerticalAlignment="Center" Content="Włącz usługę bezpieczeństwa na tym urządzeniu" Padding="0" FontSize="{DynamicResource SmallFontSize}" />
+      </StackPanel>
+    </StackPanel>
+    <Button local:CornerRadiusSetter.CornerRadius="15" Style="{DynamicResource BBad}" Margin="0,0,0,15" HorizontalAlignment="Center" VerticalAlignment="Bottom" Padding="20 0 20 0" Height="30" Template="{DynamicResource BadButton}" Click="Button_Click_1">
+      <Label Style="{DynamicResource Normal}" HorizontalAlignment="Center" Content="Ustawienia zaawansowane" FontSize="{DynamicResource SmallFontSize}" Padding="0" />
+    </Button>
+  </Grid>
+</Window>

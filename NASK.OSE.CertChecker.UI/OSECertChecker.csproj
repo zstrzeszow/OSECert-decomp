@@ -1,0 +1,54 @@
+<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+  <PropertyGroup>
+    <AssemblyName>OSECertChecker</AssemblyName>
+    <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
+    <OutputType>WinExe</OutputType>
+    <UseWPF>True</UseWPF>
+    <TargetFramework>net40</TargetFramework>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup>
+    <LangVersion>10.0</LangVersion>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>app.ico</ApplicationIcon>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <RootNamespace />
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="resources\redshield100.png" />
+    <None Remove="resources\greenshield500.png" />
+    <None Remove="fonts\robotocondensed-regular.ttf" />
+    <None Remove="resources\logo_ose.png" />
+    <None Remove="resources\greenshield100.png" />
+    <None Remove="greenshield.ico" />
+    <None Remove="oseico.ico" />
+    <None Remove="resources\ribbon.png" />
+    <None Remove="resources\redshield500.png" />
+    <None Remove="fonts\robotocondensed-bold.ttf" />
+    <EmbeddedResource Include="resources\redshield100.png" LogicalName="resources/redshield100.png" />
+    <EmbeddedResource Include="resources\greenshield500.png" LogicalName="resources/greenshield500.png" />
+    <EmbeddedResource Include="fonts\robotocondensed-regular.ttf" LogicalName="fonts/robotocondensed-regular.ttf" />
+    <EmbeddedResource Include="resources\logo_ose.png" LogicalName="resources/logo_ose.png" />
+    <EmbeddedResource Include="resources\greenshield100.png" LogicalName="resources/greenshield100.png" />
+    <EmbeddedResource Include="greenshield.ico" LogicalName="greenshield.ico" />
+    <EmbeddedResource Include="oseico.ico" LogicalName="oseico.ico" />
+    <EmbeddedResource Include="resources\ribbon.png" LogicalName="resources/ribbon.png" />
+    <EmbeddedResource Include="resources\redshield500.png" LogicalName="resources/redshield500.png" />
+    <EmbeddedResource Include="fonts\robotocondensed-bold.ttf" LogicalName="fonts/robotocondensed-bold.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="OCECertCheckerLibrary">
+      <HintPath>..\..\OCECertCheckerLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="OSECertCheckerServiceLibrary">
+      <HintPath>..\..\OSECertCheckerServiceLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="OSECertCheckerTrayLibrary">
+      <HintPath>..\..\OSECertCheckerTrayLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+</Project>

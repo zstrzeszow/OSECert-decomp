@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+  <PropertyGroup>
+    <AssemblyName>OSECertCheckerTray</AssemblyName>
+    <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
+    <OutputType>WinExe</OutputType>
+    <UseWindowsForms>True</UseWindowsForms>
+    <TargetFramework>net40</TargetFramework>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup>
+    <LangVersion>10.0</LangVersion>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RootNamespace />
+  </PropertyGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Reference Include="OSECertCheckerServiceLibrary">
+      <HintPath>..\..\OSECertCheckerServiceLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="OSECertCheckerTrayLibrary">
+      <HintPath>..\..\OSECertCheckerTrayLibrary.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+</Project>

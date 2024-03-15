@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Window x:Class="NASK.OSE.CertChecker.UI.AdvancedOptions" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:local="clr-namespace:NASK.OSE.CertChecker.UI" WindowStartupLocation="CenterOwner" ResizeMode="NoResize" Title="Ustawienia zaawansowane" Height="250" Width="500">
+  <Grid Background="{DynamicResource Dark}">
+    <Image HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="260" Height="165" Source="Resources/ribbon.png" Visibility="Collapsed" />
+    <Label Style="{DynamicResource Normal}" HorizontalAlignment="Center" Margin="30" Content="Ustawienia zaawansowane" Padding="0" />
+    <CheckBox VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="85 50 85 50" IsChecked="{Binding Flag}">
+      <TextBlock Style="{DynamicResource NormalTB}" VerticalAlignment="Center" FontSize="{DynamicResource SmallFontSize}" Padding="10 0 0 0">
+        <AccessText TextWrapping="Wrap" Text="Uruchamiaj aplikację Bezpieczny Internet OSE wraz ze startem Windows" />
+      </TextBlock>
+    </CheckBox>
+    <StackPanel HorizontalAlignment="Center" Height="50" Margin="15" VerticalAlignment="Bottom" Orientation="Horizontal">
+      <Button local:CornerRadiusSetter.CornerRadius="25" Style="{DynamicResource BNormal}" HorizontalAlignment="Center" Margin="0 0 10 0" Padding="20 0 20 0" Template="{DynamicResource MainButton}" Click="Button_Click">
+        <Label Style="{DynamicResource Normal}" HorizontalAlignment="Center" Content="ZASTOSUJ" Padding="0" FontSize="{DynamicResource SmallFontSize}" />
+      </Button>
+      <Button local:CornerRadiusSetter.CornerRadius="25" Style="{DynamicResource BBad}" HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="100" Height="50" Template="{DynamicResource BadButton}" Click="Button_Click_1">
+        <Label Style="{DynamicResource Normal}" HorizontalAlignment="Center" Content="ANULUJ" Padding="0" FontSize="{DynamicResource SmallFontSize}" />
+      </Button>
+    </StackPanel>
+  </Grid>
+</Window>
